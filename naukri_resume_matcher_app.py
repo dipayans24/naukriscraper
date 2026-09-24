@@ -38,8 +38,7 @@ try:
 except ImportError:
     pdfplumber = None
 
-import subprocess
-subprocess.run(["playwright", "install", "chromium"], check=False)
+
 # ----------------------------------------------------------------------
 # Resume handling — strictly in-memory, discarded after keyword extraction
 # ----------------------------------------------------------------------
@@ -212,7 +211,7 @@ def build_search_url(keyword: str, location: str) -> str:
 def scrape_naukri(keyword: str, location: str, pages: int, status_cb=None) -> list[dict]:
     all_jobs = []
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(headless=True)  # already headless — see note below
         context = browser.new_context(
             user_agent=(
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
