@@ -38,7 +38,8 @@ try:
 except ImportError:
     pdfplumber = None
 
-
+import subprocess
+subprocess.run(["playwright", "install", "chromium"], check=False)
 # ----------------------------------------------------------------------
 # Resume handling — strictly in-memory, discarded after keyword extraction
 # ----------------------------------------------------------------------
