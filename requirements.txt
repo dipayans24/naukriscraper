@@ -1,7 +1,7 @@
-streamlit>=1.35
-playwright>=1.44
-pdfplumber>=0.11
-pandas>=2.0
+streamlit
+playwright
+pdfplumber
+pandas
 libnss3
 libnspr4
 libatk1.0-0
